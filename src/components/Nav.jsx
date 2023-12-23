@@ -11,6 +11,7 @@ const Nav = () => {
   return (
     <header>
       <div>
+        {/* <h1 className="text-center font-bold text-2xl">Hello world</h1> */}
         <img src="./caba.png" alt="caba" />
       </div>
       <div className="px-4 py-2 text-white flex  justify-center bg-blue-900">

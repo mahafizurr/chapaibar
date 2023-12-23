@@ -12,6 +12,7 @@ import Notice from "./pages/Notice";
 import Contact from "./pages/Contact";
 import Employee from "./components/Employees";
 import Notices from "./components/Notices";
+import FilebaseImageUpload from "./Firebase/FirebaseImageUpload";
 import MemberDirectories from "./components/MemberDirectories";
 
 import Alihaider from "./components/em/Alihaider";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/notice" element={<Notice />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/notices" element={<Notices />} />
+        <Route path="/exex" element={<FilebaseImageUpload />} />
         <Route path="/membersdirectory" element={<MemberDirectories />} />
 
         <Route path="/alihaider" element={<Alihaider />} />
