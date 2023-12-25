@@ -1,5 +1,5 @@
 import React from "react";
-import Committee2023 from "../components/Committee2023";
+import Committee2023 from "../committee/Committee2023";
 
 const Committee = () => {
   return (

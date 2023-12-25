@@ -8,12 +8,12 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Committee from "./pages/Committee";
 import Notice from "./pages/Notice";
-
 import Contact from "./pages/Contact";
 import Employee from "./components/Employees";
 import Notices from "./components/Notices";
 import FilebaseImageUpload from "./Firebase/FirebaseImageUpload";
 import MemberDirectories from "./components/MemberDirectories";
+import Committee2022 from "./committee/Committee2022";
 
 import Alihaider from "./components/em/Alihaider";
 import Babu from "./components/em/Babu";
@@ -38,12 +38,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/committee" element={<Committee />} />
-
         <Route path="/notice" element={<Notice />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/notices" element={<Notices />} />
         <Route path="/exex" element={<FilebaseImageUpload />} />
         <Route path="/membersdirectory" element={<MemberDirectories />} />
+        <Route path="/committee/2022" element={<Committee2022 />} />
 
         <Route path="/alihaider" element={<Alihaider />} />
         <Route path="/babu" element={<Babu />} />
