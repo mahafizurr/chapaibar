@@ -4,7 +4,7 @@ const Committee2021 = () => {
   return (
     <div>
       <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
-        Present Committee 2021
+        Previous Committee 2021
       </h1>
 
       <div className="w-full max-w-screen-lg mx-auto">
