@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Pagination from "./Pagination";
 
 const MemberDirectories = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Add logic to fetch data for the new page, e.g., API request, etc.
+  };
+
   const MemberData = [
     {
       SerialNo: 1,
@@ -43,7 +52,48 @@ const MemberDirectories = () => {
       Photo: "./adv/Golam Mostofa (1) 01712278241.jpg",
       Remark: "",
     },
+    {
+      SerialNo: 6,
+      BBCSanadNo: 47,
+      Name: "MD. SHAHJAHAN HOSSAIN",
+      MobileNumber: "01712243684",
+      Photo: "",
+      Remark: "",
+    },
+    {
+      SerialNo: 7,
+      BBCSanadNo: "44A",
+      Name: "MD. GOLAM KABIR ",
+      MobileNumber: "01712138118",
+      Photo: "",
+      Remark: "",
+    },
+    {
+      SerialNo: 8,
+      BBCSanadNo: 49,
+      Name: "MD. TAHER JAMIL ",
+      MobileNumber: "01915396095",
+      Photo: "",
+      Remark: "",
+    },
+    {
+      SerialNo: 9,
+      BBCSanadNo: 50,
+      Name: "ALHAJ SHAH MAINUDDIN AHMED",
+      MobileNumber: "01726762246",
+      Photo: "",
+      Remark: "",
+    },
+    {
+      SerialNo: 10,
+      BBCSanadNo: 51,
+      Name: "MD. OBAIDUL HOQUE",
+      MobileNumber: "01726257968",
+      Photo: "",
+      Remark: "",
+    },
   ];
+
   return (
     <div>
       <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
@@ -80,6 +130,13 @@ const MemberDirectories = () => {
           </tbody>
         </table>
       </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+      <br />
     </div>
   );
 };
