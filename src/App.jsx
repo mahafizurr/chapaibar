@@ -29,6 +29,13 @@ import Samad from "./components/em/Samad";
 import Sridoy from "./components/em/Sridoy";
 import Srimoty from "./components/em/Srimoty";
 import Toymur from "./components/em/Toymur";
+import Committee2021 from "./committee/Committee2021";
+import Committee2020 from "./committee/Committee2020";
+import Committee2019 from "./committee/Committee2019";
+import Committee2018 from "./committee/Committee2018";
+import Committee2017 from "./committee/Commiittee2017";
+import Committee2016 from "./committee/Committee2016";
+import Committee2015 from "./committee/Committee2015";
 
 function App() {
   return (
@@ -44,6 +51,13 @@ function App() {
         <Route path="/exex" element={<FilebaseImageUpload />} />
         <Route path="/membersdirectory" element={<MemberDirectories />} />
         <Route path="/committee/2022" element={<Committee2022 />} />
+        <Route path="/committee/2021" element={<Committee2021 />} />
+        <Route path="/committee/2020" element={<Committee2020 />} />
+        <Route path="/committee/2019" element={<Committee2019 />} />
+        <Route path="/committee/2018" element={<Committee2018 />} />
+        <Route path="/committee/2017" element={<Committee2017 />} />
+        <Route path="/committee/2016" element={<Committee2016 />} />
+        <Route path="/committee/2015" element={<Committee2015 />} />
 
         <Route path="/alihaider" element={<Alihaider />} />
         <Route path="/babu" element={<Babu />} />

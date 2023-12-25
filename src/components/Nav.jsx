@@ -59,6 +59,15 @@ const Nav = () => {
                     <li>
                       <Link to="/committee/2018">Previous Committee 2018</Link>
                     </li>
+                    <li>
+                      <Link to="/committee/2017">Previous Committee 2017</Link>
+                    </li>
+                    <li>
+                      <Link to="/committee/2016">Previous Committee 2016</Link>
+                    </li>
+                    <li>
+                      <Link to="/committee/2015">Previous Committee 2015</Link>
+                    </li>
                   </ul>
                 </div>
               )}
