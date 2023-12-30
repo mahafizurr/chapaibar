@@ -37,6 +37,7 @@ import Committee2017 from "./committee/Commiittee2017";
 import Committee2016 from "./committee/Committee2016";
 import Committee2015 from "./committee/Committee2015";
 import UserProfileUploader from "./components/UserProfileUploader";
+import UserProfileDetails from "./components/UserProfileDetails";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/notices" element={<Notices />} />
         <Route path="/exex" element={<FilebaseImageUpload />} />
         <Route path="/exexex" element={<UserProfileUploader />} />
+        <Route path="/user/:id" element={<UserProfileDetails />} />
 
         <Route path="/membersdirectory" element={<MemberDirectories />} />
         <Route path="/committee/2022" element={<Committee2022 />} />
