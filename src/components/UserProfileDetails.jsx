@@ -45,7 +45,30 @@ const UserProfileDetails = () => {
             alt="Profile Images"
             className="w-80 h-80 object-cover m-4"
           />
-          <div>{/* Other details */}</div>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">Name : {userProfile.name}</span>
+          </p>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">Father Name: {userProfile.fname}</span>
+          </p>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">Address: {userProfile.address}</span>
+          </p>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">
+              Phone Number: {userProfile.mobile}
+            </span>
+          </p>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">
+              Joining Date: {userProfile.joining}
+            </span>
+          </p>
+          <p className="border-b border-gray-300 py-2">
+            <span className="font-bold">
+              Enrollment Date: {userProfile.enroll}
+            </span>
+          </p>
         </>
       )}
     </div>
