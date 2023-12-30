@@ -28,8 +28,25 @@ const UserProfileViewer = () => {
     fetchUserProfiles();
   }, [currentPage, perPage]);
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredLawyers = userProfiles.filter((lawyer) =>
+    lawyer.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
+      <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="border p-2 rounded w-full"
+          placeholder="Search"
+        />
+      </div>
       <div className="w-full max-w-screen-lg mx-auto">
         <table className="text-center w-full border border-collapse">
           <thead>
