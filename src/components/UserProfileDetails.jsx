@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+<<<<<<< HEAD
 const apiBaseUrl = "http://localhost:5001/api/user-profiles";
+=======
+const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
+>>>>>>> f02b896efd0d8a722bc3a400172f77bbbbdc55ef
 
 const UserProfileDetails = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -45,6 +49,7 @@ const UserProfileDetails = () => {
             alt="Profile Images"
             className="w-80 h-80 object-cover m-4"
           />
+<<<<<<< HEAD
           <p className="border-b border-gray-300 py-2">
             <span className="font-bold">Name : {userProfile.name}</span>
           </p>
@@ -69,6 +74,9 @@ const UserProfileDetails = () => {
               Enrollment Date: {userProfile.enroll}
             </span>
           </p>
+=======
+          <div>{/* Other details */}</div>
+>>>>>>> f02b896efd0d8a722bc3a400172f77bbbbdc55ef
         </>
       )}
     </div>

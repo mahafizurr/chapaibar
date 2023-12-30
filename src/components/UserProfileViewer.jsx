@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const apiBaseUrl = "http://localhost:5001/api/user-profiles";
+const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 
 const UserProfileViewer = () => {
   const [userProfiles, setUserProfiles] = useState([]);
@@ -70,9 +70,13 @@ const UserProfileViewer = () => {
                   <tr key={profile._id} className="bg-gray-100">
                     <td className="border p-2">{profile.serial}</td>
                     <td className="border p-2">{profile.bbc}</td>
+<<<<<<< HEAD
                     <td className="border p-2">
                       <Link to={`/user/${profile._id}`}>{profile.name}</Link>
                     </td>
+=======
+                    <td className="border p-2"><Link to={`/user/${profile._id}`}>{profile.name}</Link></td>
+>>>>>>> f02b896efd0d8a722bc3a400172f77bbbbdc55ef
                     <td className="border p-2">{profile.mobile}</td>
                     <td className="border p-2">
                       <img

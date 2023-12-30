@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const apiBaseUrl = "http://localhost:5001/api/user-profiles";
+const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 
 const UserProfileUploader = () => {
   const [userProfiles, setUserProfiles] = useState([]);
