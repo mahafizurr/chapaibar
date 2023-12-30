@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const apiBaseUrl = "http://localhost:5001/api/user-profiles";
 
@@ -9,6 +10,7 @@ const UserProfileViewer = () => {
   const [perPage, setPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     // Fetch all user profiles when the component mounts
@@ -28,8 +30,25 @@ const UserProfileViewer = () => {
     fetchUserProfiles();
   }, [currentPage, perPage]);
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredLawyers = userProfiles.filter((lawyer) =>
+    lawyer.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
+      <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="border p-2 rounded w-full"
+          placeholder="Search"
+        />
+      </div>
       <div className="w-full max-w-screen-lg mx-auto">
         <table className="text-center w-full border border-collapse">
           <thead>
@@ -45,13 +64,15 @@ const UserProfileViewer = () => {
           <tbody>
             {loading && <p>Loading user profiles...</p>}
             {error && <p>{error}</p>}
-            {userProfiles.length > 0 && (
+            {filteredLawyers.length > 0 && (
               <>
-                {userProfiles.map((profile) => (
+                {filteredLawyers.map((profile) => (
                   <tr key={profile._id} className="bg-gray-100">
                     <td className="border p-2">{profile.serial}</td>
                     <td className="border p-2">{profile.bbc}</td>
-                    <td className="border p-2">{profile.name}</td>
+                    <td className="border p-2">
+                      <Link to={`/user/${profile._id}`}>{profile.name}</Link>
+                    </td>
                     <td className="border p-2">{profile.mobile}</td>
                     <td className="border p-2">
                       <img

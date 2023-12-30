@@ -38,8 +38,8 @@ function FirebaseImageUpload() {
   }, []);
 
   return (
-    <div className="container mx-auto my-8 p-8 bg-gray-100 shadow-lg rounded-md">
-      <div className="mt-4">
+    <div className="container">
+      <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
         {loading ? (
           <p>Loading...</p>
         ) : (
