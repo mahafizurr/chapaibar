@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
+const apiBaseUrl = "http://localhost:5001/api/user-profiles";
 
 const UserProfileViewer = () => {
   const [userProfiles, setUserProfiles] = useState([]);
@@ -19,6 +19,7 @@ const UserProfileViewer = () => {
           `${apiBaseUrl}?page=${currentPage}&limit=${perPage}`
         );
         setUserProfiles(response.data);
+        setPerPage();
         setLoading();
         setError();
       } catch (error) {
@@ -70,8 +71,6 @@ const UserProfileViewer = () => {
                     <td className="border p-2">{profile.serial}</td>
                     <td className="border p-2">{profile.bbc}</td>
 
-                    <td className="border p-2"></td>
-
                     <td className="border p-2">{profile.name}</td>
 
                     <td className="border p-2">{profile.mobile}</td>
@@ -99,7 +98,7 @@ const UserProfileViewer = () => {
         </button>
         <span className="flex bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 mx-2 my-2 cursor-pointer rounded">
           {" "}
-          Page {currentPage}{" "}
+          Page {currentPage}
         </span>
         <button
           onClick={() => setCurrentPage((prev) => prev + 1)}
