@@ -1,10 +1,12 @@
 import React from "react";
-import MemberDirectories from "../components/MemberDirectories";
+/* import MemberDirectories from "../components/MemberDirectories"; */
+import UserProfileViewer from "../components/UserProfileViewer";
 
 const MembersDirectory = () => {
   return (
     <div>
-      <MemberDirectories />
+      <UserProfileViewer />
+      {/*     <MemberDirectories /> */}
     </div>
   );
 };

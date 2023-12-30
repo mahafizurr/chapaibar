@@ -1,16 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Pagination from "./Pagination";
+import UserProfileViewer from "./UserProfileViewer";
 
 const MemberDirectories = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5;
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    // Add logic to fetch data for the new page, e.g., API request, etc.
-  };
-
+  /* 
   const MemberData = [
     {
       SerialNo: 1,
@@ -93,14 +84,16 @@ const MemberDirectories = () => {
       Remark: "",
     },
   ];
-
+ */
   return (
     <div>
       <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
         Members Directory
       </h1>
 
-      <div className="w-full max-w-screen-lg mx-auto">
+      <UserProfileViewer />
+
+      {/* <div className="w-full max-w-screen-lg mx-auto">
         <table className=" text-center w-full border border-collapse">
           <thead>
             <tr className="bg-gray-200">
@@ -129,13 +122,8 @@ const MemberDirectories = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
       <br />
     </div>
   );
