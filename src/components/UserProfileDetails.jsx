@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 <<<<<<< HEAD
-const apiBaseUrl = "http://localhost:5001/api/user-profiles";
+const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 =======
 const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 >>>>>>> f02b896efd0d8a722bc3a400172f77bbbbdc55ef
