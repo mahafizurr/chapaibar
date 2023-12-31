@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserProfileDetails = () => {
-  return <div>UserProfileDetails</div>;
+  return <div>hellos</div>;
 };
 
 export default UserProfileDetails;
