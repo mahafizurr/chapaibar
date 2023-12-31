@@ -19,6 +19,7 @@ const UserProfileViewer = () => {
           `${apiBaseUrl}?page=${currentPage}&limit=${perPage}`
         );
         setUserProfiles(response.data);
+        setPerPage();
         setLoading(false); // Set loading to false when data is fetched
         setError(null);
       } catch (error) {
@@ -47,7 +48,7 @@ const UserProfileViewer = () => {
           value={searchTerm}
           onChange={handleSearchChange}
           className="border p-2 rounded w-full"
-          placeholder="Search"
+          placeholder="Search with advocate name"
         />
       </div>
       <div className="w-full max-w-screen-lg mx-auto">
@@ -83,7 +84,7 @@ const UserProfileViewer = () => {
                   <td className="border p-2">
                     <img
                       src={profile.profileImage}
-                      alt="Profile"
+                      alt="Advocate Photos"
                       className="w-20 h-20 object-cover"
                     />
                   </td>
