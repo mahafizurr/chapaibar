@@ -76,7 +76,7 @@ const UserProfileViewer = () => {
                 <tr key={profile._id} className="bg-gray-100">
                   <td className="border p-2">{profile.serial}</td>
                   <td className="border p-2">{profile.bbc}</td>
-                  <td className="border p-2">
+                  <td className="border p-2 text-blue-800">
                     <Link to={`/user/${profile._id}`}>{profile.name}</Link>
                   </td>
                   <td className="border p-2">{profile.mobile}</td>
