@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 
@@ -12,18 +13,18 @@ const UserProfileViewer = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Fetch all user profiles when the component mounts
     const fetchUserProfiles = async () => {
       try {
         const response = await axios.get(
           `${apiBaseUrl}?page=${currentPage}&limit=${perPage}`
         );
         setUserProfiles(response.data);
-        setPerPage();
-        setLoading();
-        setError();
+        setLoading(false); // Set loading to false when data is fetched
+        setError(null);
       } catch (error) {
         console.error("Error fetching user profiles:", error);
+        setLoading(false);
+        setError("Error fetching user profiles. Please try again.");
       }
     };
 
@@ -34,8 +35,8 @@ const UserProfileViewer = () => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredLawyers = userProfiles.filter((lawyer) =>
-    lawyer.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredUserProfiles = userProfiles.filter((profile) =>
+    profile.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -62,29 +63,37 @@ const UserProfileViewer = () => {
             </tr>
           </thead>
           <tbody>
-            {loading && <p>Loading user profiles...</p>}
-            {error && <p>{error}</p>}
-            {filteredLawyers.length > 0 && (
-              <>
-                {filteredLawyers.map((profile) => (
-                  <tr key={profile._id} className="bg-gray-100">
-                    <td className="border p-2">{profile.serial}</td>
-                    <td className="border p-2">{profile.bbc}</td>
-
-                    <td className="border p-2">{profile.name}</td>
-
-                    <td className="border p-2">{profile.mobile}</td>
-                    <td className="border p-2">
-                      <img
-                        src={profile.profileImage}
-                        alt="advocate"
-                        className="w-20 h-20 object-cover"
-                      />
-                    </td>
-                    {/*  <td className="border p-2">{profile.remark}</td> */}
-                  </tr>
-                ))}
-              </>
+            {loading ? (
+              <tr>
+                <td colSpan="6">Loading user profiles...</td>
+              </tr>
+            ) : error ? (
+              <tr>
+                <td colSpan="6">{error}</td>
+              </tr>
+            ) : filteredUserProfiles.length > 0 ? (
+              filteredUserProfiles.map((profile) => (
+                <tr key={profile._id} className="bg-gray-100">
+                  <td className="border p-2">{profile.serial}</td>
+                  <td className="border p-2">{profile.bbc}</td>
+                  <td className="border p-2">
+                    <Link to={`/user/${profile._id}`}>{profile.name}</Link>
+                  </td>
+                  <td className="border p-2">{profile.mobile}</td>
+                  <td className="border p-2">
+                    <img
+                      src={profile.profileImage}
+                      alt="Profile"
+                      className="w-20 h-20 object-cover"
+                    />
+                  </td>
+                  {/* Add other fields if needed */}
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6">No user profiles found.</td>
+              </tr>
             )}
           </tbody>
         </table>
@@ -97,7 +106,6 @@ const UserProfileViewer = () => {
           Previous
         </button>
         <span className="flex bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 mx-2 my-2 cursor-pointer rounded">
-          {" "}
           Page {currentPage}
         </span>
         <button
