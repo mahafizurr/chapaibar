@@ -83,8 +83,8 @@ const UserProfileViewer = () => {
                   <td className="border p-2">{profile.mobile}</td>
                   <td className="border p-2">
                     <img
-                      src={profile.profileImage}
-                      alt="Advocate Photos"
+                      src="abc.jpg"
+                      alt="network error"
                       className="w-20 h-20 object-cover"
                     />
                   </td>
