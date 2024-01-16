@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import EmployeeList from "./EmployeeList";
 
 function Employees() {
   return (
@@ -7,7 +8,8 @@ function Employees() {
       <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
         Employee
       </h1>
-
+      <EmployeeList />
+      {/* 
       <div className="w-full max-w-screen-lg mx-auto">
         <table className=" text-center w-full border border-collapse">
           <thead>
@@ -233,7 +235,7 @@ function Employees() {
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 }
