@@ -1,0 +1,137 @@
+import React, { useState } from "react";
+import { Menu } from "antd";
+import { Link } from "react-router-dom"; // Assuming you are using React Router for navigation
+
+const items = [
+  {
+    key: "home",
+    label: "Home",
+    path: "/home",
+  },
+  {
+    key: "committee",
+    label: "Committee",
+    children: [
+      {
+        key: "presentCommittee",
+        label: "Present Committee",
+        children: [
+          {
+            key: "presentCommittee2023",
+            label: "Present Committee 2023",
+            path: "/committee",
+          },
+        ],
+      },
+      {
+        key: "previousCommittee",
+        label: "Previous Committee",
+        children: [
+          {
+            key: "previousCommittee2022",
+            label: "Previous Committee 2022",
+            path: "/committee/2022",
+          },
+          {
+            key: "previousCommittee2021",
+            label: "Previous Committee 2021",
+            path: "/committee/2021",
+          },
+          {
+            key: "previousCommittee2020",
+            label: "Previous Committee 2020",
+            path: "/committee/2020",
+          },
+          {
+            key: "previousCommittee2021",
+            label: "Previous Committee 2019",
+            path: "/committee/2019",
+          },
+          {
+            key: "previousCommittee2018",
+            label: "Previous Committee 2018",
+            path: "/committee/2018",
+          },
+          {
+            key: "previousCommittee2017",
+            label: "Previous Committee 2017",
+            path: "/committee/2017",
+          },
+          {
+            key: "previousCommittee2016",
+            label: "Previous Committee 2016",
+            path: "/committee/2016",
+          },
+          {
+            key: "previousCommittee2015",
+            label: "Previous Committee 2015",
+            path: "/committee/2015",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: "memberDirectories",
+    label: "Member Directories",
+    path: "/membersdirectory",
+  },
+  {
+    key: "notice",
+    label: "Notice",
+    path: "/notice",
+  },
+  {
+    key: "employee",
+    label: "Employee",
+    path: "/employee",
+  },
+  {
+    key: "contact",
+    label: "Contact",
+    path: "/contact",
+  },
+];
+
+const renderMenuItems = (menuItems, setOpenKeys, openKeys) => {
+  return menuItems.map((item) => (
+    <Menu.Item key={item.key}>
+      {item.children ? (
+        <Menu.SubMenu
+          title={item.label}
+          onTitleClick={() => handleOpenChange(item.key, setOpenKeys, openKeys)}
+        >
+          {renderMenuItems(item.children, setOpenKeys, openKeys)}
+        </Menu.SubMenu>
+      ) : (
+        <Link to={item.path} style={{ textDecoration: "none" }}>
+          {item.label}
+        </Link>
+      )}
+    </Menu.Item>
+  ));
+};
+
+const handleOpenChange = (key, setOpenKeys, openKeys) => {
+  const updatedOpenKeys = openKeys.includes(key)
+    ? openKeys.filter((k) => k !== key)
+    : [...openKeys, key];
+  setOpenKeys(updatedOpenKeys);
+};
+
+const Navigation = () => {
+  const [openKeys, setOpenKeys] = useState([]);
+
+  return (
+    <Menu
+      mode="horizontal"
+      style={{ display: "flex", justifyContent: "center" }}
+      openKeys={openKeys}
+      onOpenChange={(keys) => setOpenKeys(keys)}
+    >
+      {renderMenuItems(items, setOpenKeys, openKeys)}
+    </Menu>
+  );
+};
+
+export default Navigation;

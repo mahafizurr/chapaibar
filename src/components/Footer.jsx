@@ -6,10 +6,10 @@ const Address = () => {
       <h1 className="text-2xl text-yellow-500 ">Address</h1>
       <br />
 
-      <p className="text-lg">Chapainawabganj Court, Chapainawabganj</p>
-      <p className="text-lg">Post Code - 6300, Thana: Chapainawabganj Sadar</p>
-      <p className="text-lg">Mobile Number: +880258893306</p>
-      <p className="text-lg">Email: advbarcnj@gmail.com</p>
+      <p className="text-md">Chapainawabganj Court, Chapainawabganj</p>
+      <p className="text-md">Post Code - 6300, Thana: Chapainawabganj Sadar</p>
+      <p className="text-md">Mobile Number: +880258893306</p>
+      <p className="text-md">Email: advbarcnj@gmail.com</p>
     </div>
   );
 };

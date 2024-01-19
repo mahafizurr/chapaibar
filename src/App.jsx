@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./styles.css";
 import "./App.css";
 
-import Nav from "./components/Nav";
+import Navigation from "./components/Navigation";
 
 import Home from "./pages/Home";
 import Committee from "./pages/Committee";
@@ -42,7 +42,7 @@ import UserProfileDetails from "./components/UserProfileDetails";
 function App() {
   return (
     <div>
-      <Nav />
+      <Navigation />
 
       <Routes>
         <Route path="/" element={<Home />} exact />

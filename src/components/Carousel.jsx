@@ -11,7 +11,7 @@ import { Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <>
+    <div className="py-2 px-10 shadow-sm">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
           <img
@@ -35,6 +35,6 @@ export default function Carousel() {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

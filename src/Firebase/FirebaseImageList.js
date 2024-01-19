@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { imageDb } from "./Config";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { v4 } from "uuid";
-import { Link } from "react-router-dom";
 
-function FirebaseImageUpload() {
+function FirebaseImageList() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,6 +36,13 @@ function FirebaseImageUpload() {
     fetchData();
   }, []);
 
+  const downloadImage = (url, name) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = name;
+    link.click();
+  };
+
   return (
     <div className="container">
       <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
@@ -49,7 +55,8 @@ function FirebaseImageUpload() {
                 <th className="border border-gray-300 px-4 py-2">
                   Upload Date
                 </th>
-                <th className="border border-gray-300 px-4 py-2">File Name</th>
+                <th className="border border-gray-300 px-4 py-2">Image</th>
+                <th className="border border-gray-300 px-4 py-2">Download</th>
               </tr>
             </thead>
             <tbody>
@@ -59,14 +66,20 @@ function FirebaseImageUpload() {
                     {file.uploadDate}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
-                    <Link
-                      to={file.url}
+                    <img
+                      src={file.url}
+                      alt={file.name}
+                      className="max-w-full h-auto"
+                      style={{ maxWidth: "150px" }} // Adjust the max width as needed
+                    />
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    <button
                       className="text-blue-500 hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={() => downloadImage(file.url, file.name)}
                     >
-                      {file.name}
-                    </Link>
+                      Download
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -78,4 +91,4 @@ function FirebaseImageUpload() {
   );
 }
 
-export default FirebaseImageUpload;
+export default FirebaseImageList;

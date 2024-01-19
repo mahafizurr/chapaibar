@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div>
       <Carousel />
-      {/* Add your content here */}
     </div>
   );
 };
