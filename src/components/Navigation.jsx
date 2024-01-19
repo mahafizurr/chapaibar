@@ -6,7 +6,7 @@ const items = [
   {
     key: "home",
     label: "Home",
-    path: "/home",
+    path: "/",
   },
   {
     key: "committee",
