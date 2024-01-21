@@ -15,13 +15,7 @@ const items = [
       {
         key: "presentCommittee",
         label: "Present Committee",
-        children: [
-          {
-            key: "presentCommittee2023",
-            label: "Present Committee 2023",
-            path: "/committee",
-          },
-        ],
+        path: "/committee",
       },
       {
         key: "previousCommittee",
@@ -29,42 +23,42 @@ const items = [
         children: [
           {
             key: "previousCommittee2022",
-            label: "Previous Committee 2022",
+            label: "2022",
             path: "/committee/2022",
           },
           {
             key: "previousCommittee2021",
-            label: "Previous Committee 2021",
+            label: "2021",
             path: "/committee/2021",
           },
           {
             key: "previousCommittee2020",
-            label: "Previous Committee 2020",
+            label: "2020",
             path: "/committee/2020",
           },
           {
             key: "previousCommittee2021",
-            label: "Previous Committee 2019",
+            label: "2019",
             path: "/committee/2019",
           },
           {
             key: "previousCommittee2018",
-            label: "Previous Committee 2018",
+            label: "2018",
             path: "/committee/2018",
           },
           {
             key: "previousCommittee2017",
-            label: "Previous Committee 2017",
+            label: "2017",
             path: "/committee/2017",
           },
           {
             key: "previousCommittee2016",
-            label: "Previous Committee 2016",
+            label: "2016",
             path: "/committee/2016",
           },
           {
             key: "previousCommittee2015",
-            label: "Previous Committee 2015",
+            label: "2015",
             path: "/committee/2015",
           },
         ],

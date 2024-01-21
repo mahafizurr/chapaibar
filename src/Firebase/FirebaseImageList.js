@@ -69,6 +69,7 @@ function FirebaseImageList() {
                     <img
                       src={file.url}
                       alt={file.name}
+                      onClick={() => downloadImage(file.url, file.name)}
                       className="max-w-full h-auto"
                       style={{ maxWidth: "150px" }} // Adjust the max width as needed
                     />
