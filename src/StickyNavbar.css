@@ -1,0 +1,23 @@
+.navbar {
+    padding: 0px;
+    background-color: #223555;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
