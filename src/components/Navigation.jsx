@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu } from "antd";
 import { Link } from "react-router-dom"; // Assuming you are using React Router for navigation
+import "../StickyNavbar.css";
 
 const items = [
   {
@@ -115,6 +116,24 @@ const handleOpenChange = (key, setOpenKeys, openKeys) => {
 
 const Navigation = () => {
   const [openKeys, setOpenKeys] = useState([]);
+  const [isSticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 100) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Menu
@@ -122,6 +141,7 @@ const Navigation = () => {
       style={{ display: "flex", justifyContent: "center" }}
       openKeys={openKeys}
       onOpenChange={(keys) => setOpenKeys(keys)}
+      className={`navbar ${isSticky ? "sticky" : ""}`}
     >
       {renderMenuItems(items, setOpenKeys, openKeys)}
     </Menu>
