@@ -11,7 +11,6 @@ function FirebaseImageList() {
     const fetchData = async () => {
       try {
         const imgs = await listAll(ref(imageDb, "files"));
-        console.log(imgs);
 
         const fetchedFiles = [];
 
@@ -66,6 +65,7 @@ function FirebaseImageList() {
                     {file.uploadDate}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
+                  <p className="mt-2">{file.name}</p>
                     <img
                       src={file.url}
                       alt={file.name}
@@ -73,6 +73,7 @@ function FirebaseImageList() {
                       className="max-w-full h-auto"
                       style={{ maxWidth: "150px" }} // Adjust the max width as needed
                     />
+                     {/* Display File Name */}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
                     <button
