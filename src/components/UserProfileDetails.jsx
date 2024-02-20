@@ -62,7 +62,7 @@ const UserProfileDetails = () => {
           </p>
           <p className="border-b border-gray-300 py-2">
             <span className="font-bold">Phone Number: </span>
-            {userProfiles.mobile}
+            +880{userProfiles.mobile}
           </p>
           <p className="border-b border-gray-300 py-2">
             <span className="font-bold">Date of Joining: </span>

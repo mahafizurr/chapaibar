@@ -80,7 +80,7 @@ const UserProfileViewer = () => {
                   <td className="border p-2 text-blue-800">
                     <Link to={`/user/${profile._id}`}>{profile.name}</Link>
                   </td>
-                  <td className="border p-2">{profile.mobile}</td>
+                  <td className="border p-2">+880{profile.mobile}</td>
                   <td className="border p-2">
                     <img
                       src="abc.jpg"
