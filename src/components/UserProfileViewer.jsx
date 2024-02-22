@@ -84,7 +84,7 @@ const UserProfileViewer = () => {
                   <td className="border p-2">
                     <img
                       src="abc.jpg"
-                      alt="network error"
+                      alt="working on the photos"
                       className="w-20 h-20 object-cover"
                     />
                   </td>
