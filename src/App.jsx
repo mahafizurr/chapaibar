@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./styles.css";
 import "./App.css";
 
@@ -11,7 +11,7 @@ import Notice from "./pages/Notice";
 import Contact from "./pages/Contact";
 import Employee from "./components/Employees";
 import Notices from "./components/Notices";
-import FilebaseImageUpload from "./Firebase/FirebaseImageUpload";
+import ProtectedRoute from "./Firebase/ProtectedRoute";
 import MemberDirectories from "./components/MemberDirectories";
 import Committee2022 from "./committee/Committee2022";
 
@@ -38,8 +38,10 @@ import Committee2016 from "./committee/Committee2016";
 import Committee2015 from "./committee/Committee2015";
 import UserProfileUploader from "./components/UserProfileUploader";
 import UserProfileDetails from "./components/UserProfileDetails";
+import Login from "./components/Login";
 
 function App() {
+  const isAuthenticated = true;
   return (
     <div>
       <Navigation />
@@ -50,10 +52,14 @@ function App() {
         <Route path="/notice" element={<Notice />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/notices" element={<Notices />} />
-        <Route path="/exex" element={<FilebaseImageUpload />} />
+        <Route
+          path="/notice-admin"
+          element={
+            isAuthenticated ? <ProtectedRoute /> : <Navigate to="/login" />
+          }
+        />
         <Route path="/exexex" element={<UserProfileUploader />} />
         <Route path="/user/:id" element={<UserProfileDetails />} />
-
         <Route path="/membersdirectory" element={<MemberDirectories />} />
         <Route path="/committee/2022" element={<Committee2022 />} />
         <Route path="/committee/2021" element={<Committee2021 />} />
@@ -80,6 +86,7 @@ function App() {
         <Route path="/toymur" element={<Toymur />} />
 
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
