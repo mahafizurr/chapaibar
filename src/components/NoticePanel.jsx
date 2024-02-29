@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { ref, listAll, deleteObject, getDownloadURL } from "firebase/storage";
 import { storage } from "../Firebase/Config";
 
-const NoticeList = () => {
+const NoticePanel = () => {
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ const NoticeList = () => {
             return {
               name: item.name,
               url: downloadURL,
+              ref: item, // Store the reference to the file
             };
           })
         );
@@ -27,6 +28,16 @@ const NoticeList = () => {
 
     fetchFiles();
   }, []);
+
+  const handleDelete = async (file) => {
+    try {
+      await deleteObject(file.ref); // Delete the file from Firebase Storage
+      // Filter out the deleted file from the files state
+      setFiles(files.filter((f) => f.name !== file.name));
+    } catch (error) {
+      console.error("Error deleting file: ", error);
+    }
+  };
 
   return (
     <div className="max-w-lg mx-auto p-6">
@@ -44,13 +55,12 @@ const NoticeList = () => {
           </a>
           <div className="md:flex md:flex-col md:flex-grow md:items-start md:ml-2">
             <span className="block">{file.name}</span>
-            <a
-              href={file.url}
-              download={file.name}
-              className="mt-1 text-indigo-600 block md:inline-block"
+            <button
+              onClick={() => handleDelete(file)}
+              className="mt-1 text-red-600 block md:inline-block"
             >
-              Download
-            </a>
+              Delete
+            </button>
           </div>
         </div>
       ))}
@@ -58,4 +68,4 @@ const NoticeList = () => {
   );
 };
 
-export default NoticeList;
+export default NoticePanel;
