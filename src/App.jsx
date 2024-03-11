@@ -39,6 +39,7 @@ import Committee2015 from "./committee/Committee2015";
 import UserProfileUploader from "./components/UserProfileUploader";
 import UserProfileDetails from "./components/UserProfileDetails";
 import Login from "./components/Login";
+import Committee2023 from "./committee/Committee2023";
 
 function App() {
   const isAuthenticated = true;
@@ -61,6 +62,7 @@ function App() {
         <Route path="/exexex" element={<UserProfileUploader />} />
         <Route path="/user/:id" element={<UserProfileDetails />} />
         <Route path="/membersdirectory" element={<MemberDirectories />} />
+        <Route path="/committee/2023" element={<Committee2023 />} />
         <Route path="/committee/2022" element={<Committee2022 />} />
         <Route path="/committee/2021" element={<Committee2021 />} />
         <Route path="/committee/2020" element={<Committee2020 />} />

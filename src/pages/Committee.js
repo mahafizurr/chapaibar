@@ -1,10 +1,11 @@
 import React from "react";
-import Committee2023 from "../committee/Committee2023";
+
+import Committee2024 from "../committee/Committee2024";
 
 const Committee = () => {
   return (
     <div>
-      <Committee2023 />
+      <Committee2024 />
     </div>
   );
 };

@@ -31,10 +31,10 @@ const NoticeList = () => {
   return (
     <div className="max-w-lg mx-auto p-6">
       {files.map((file) => (
-        <div
-          key={file.name}
-          className="mb-4 md:flex md:items-center md:justify-between"
-        >
+        <div key={file.name}>
+          <h3>
+            <span className="block mt-4">{file.name}</span>
+          </h3>
           <a href={file.url} target="_blank" rel="noopener noreferrer">
             <img
               src={file.url}
@@ -43,7 +43,6 @@ const NoticeList = () => {
             />
           </a>
           <div className="md:flex md:flex-col md:flex-grow md:items-start md:ml-2">
-            <span className="block">{file.name}</span>
             <a
               href={file.url}
               download={file.name}

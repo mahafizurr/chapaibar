@@ -23,6 +23,11 @@ const items = [
         label: "Previous Committee",
         children: [
           {
+            key: "previousCommittee2023",
+            label: "2023",
+            path: "/committee/2023",
+          },
+          {
             key: "previousCommittee2022",
             label: "2022",
             path: "/committee/2022",
