@@ -45,7 +45,7 @@ const UserProfileDetails = () => {
           </p>
           <img
             src="abc.jpg"
-            alt="working on the photos"
+            alt="error"
             className="w-40 h-40 object-cover border-b border-gray-300 py-2"
           />
           <p className="border-b border-gray-300 py-2">
