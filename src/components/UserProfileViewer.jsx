@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { ImageDataLoop } from "./ImageDataLoop";
 
 const apiBaseUrl = "https://chapaibackend.vercel.app/api/user-profiles";
 
@@ -82,11 +83,7 @@ const UserProfileViewer = () => {
                   </td>
                   <td className="border p-2">+880{profile.mobile}</td>
                   <td className="border p-2">
-                    <img
-                      src="abc.jpg"
-                      alt="error"
-                      className="w-20 h-20 object-cover"
-                    />
+                    <ImageDataLoop />
                   </td>
                   {/* Add other fields if needed */}
                 </tr>
