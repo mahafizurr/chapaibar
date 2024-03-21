@@ -21,8 +21,7 @@ const UserProfileViewer = () => {
           `${apiBaseUrl}?page=${currentPage}&limit=${perPage}`
         );
         setUserProfiles(response.data);
-        setPerPage();
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false);
         setError(null);
       } catch (error) {
         console.error("Error fetching user profiles:", error);
@@ -87,6 +86,7 @@ const UserProfileViewer = () => {
                     <ImageDataLoop images={images} />
                   </td>
                   {/* Add other fields if needed */}
+                  <td className="border p-2">{profile.remark}</td>
                 </tr>
               ))
             ) : (
@@ -101,6 +101,7 @@ const UserProfileViewer = () => {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           className="flex bg-blue-500 text-white px-3 py-2 mx-2 my-2 cursor-pointer rounded"
+          disabled={currentPage === 1}
         >
           Previous
         </button>
