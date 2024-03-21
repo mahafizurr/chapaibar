@@ -1,7 +1,6 @@
 import React from "react";
-import { images } from "./ImageData";
 
-export const ImageDataLoop = () => {
+export const ImageDataLoop = ({ images }) => {
   return (
     <div>
       {images.map((image) => (
