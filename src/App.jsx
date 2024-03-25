@@ -40,7 +40,6 @@ import UserProfileUploader from "./components/UserProfileUploader";
 import UserProfileDetails from "./components/UserProfileDetails";
 import Login from "./components/Login";
 import Committee2023 from "./committee/Committee2023";
-import AdvocatePhotoUpload from "./components/AdvocatePhotoUpload";
 
 function App() {
   const isAuthenticated = true;
@@ -54,7 +53,6 @@ function App() {
         <Route path="/notice" element={<Notice />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/notices" element={<Notices />} />
-        <Route path="/imadv" element={<AdvocatePhotoUpload />} />
 
         <Route
           path="/notice-admin"
