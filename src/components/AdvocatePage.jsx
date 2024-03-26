@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import { advocateData } from "./Data";
 
 const ProfileRow = ({ profile }) => (
   <tr className="bg-gray-100">
     <td className="border p-2">{profile.userId}</td>
     <td className="border p-2">{profile.bbcSanadNo}</td>
-    <td className="border p-2 text-blue-800">{profile.name}</td>
+    <td className="border p-2 text-blue-800">
+      <Link to={`/advocates/${profile.userId}`}>{profile.name}</Link>
+    </td>
     <td className="border p-2">{profile.mobileNumber}</td>
     <td className="border p-2">
       <img
