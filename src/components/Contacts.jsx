@@ -4,6 +4,7 @@ import {
   AiOutlinePhone,
   AiOutlineMail,
 } from "react-icons/ai";
+import NoticeUp from "./notice/NoticeUp";
 
 const contactMethods = [
   {
@@ -36,6 +37,7 @@ export default function Contacts() {
       <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
         Contact
       </h1>
+      <NoticeUp />
 
       <div className="flex flex-wrap justify-center p-4">
         {contactMethods.map((method, index) => (

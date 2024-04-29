@@ -19,7 +19,7 @@ const AdvocateDetailsPage = () => {
   return (
     <div className="max-w-md mx-auto p-4">
       <img
-        className="rounded-full h-24 w-24 mx-auto"
+        className="rounded h-80 w-80 mx-auto"
         src={advocate.photo}
         alt={advocate.name}
       />
