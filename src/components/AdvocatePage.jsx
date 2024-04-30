@@ -47,6 +47,17 @@ const AdvocatePage = () => {
           </tbody>
         </table>
       </div>
+      <div className="flex justify-center mt-4">
+        <button className="flex bg-blue-500 text-white px-3 py-2 mx-2 my-2 cursor-pointer rounded">
+          Previous
+        </button>
+        <span className="flex bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 mx-2 my-2 cursor-pointer rounded">
+          Page 1
+        </span>
+        <button className="flex bg-blue-500 text-white px-3 py-2 mx-2 my-2 cursor-pointer rounded">
+          Next
+        </button>
+      </div>
     </div>
   );
 };
