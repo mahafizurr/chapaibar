@@ -78,14 +78,14 @@ const items = [
     ],
   },
   {
-    key: "employee",
-    label: "Employee",
-    path: "/employee",
-  },
-  {
     key: "notice",
     label: "Notice",
     path: "/notice",
+  },
+  {
+    key: "employee",
+    label: "Employee",
+    path: "/employee",
   },
 
   {
