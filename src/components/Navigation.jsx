@@ -9,6 +9,12 @@ const items = [
     label: "Home",
     path: "/",
   },
+
+  {
+    key: "memberDirectories",
+    label: "Member Directories",
+    path: "/membersdirectory",
+  },
   {
     key: "committee",
     label: "Committee",
@@ -72,20 +78,16 @@ const items = [
     ],
   },
   {
-    key: "memberDirectories",
-    label: "Member Directories",
-    path: "/membersdirectory",
+    key: "employee",
+    label: "Employee",
+    path: "/employee",
   },
   {
     key: "notice",
     label: "Notice",
     path: "/notice",
   },
-  {
-    key: "employee",
-    label: "Employee",
-    path: "/employee",
-  },
+
   {
     key: "contact",
     label: "Contact",
