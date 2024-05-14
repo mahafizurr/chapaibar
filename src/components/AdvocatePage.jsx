@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { advocateData } from "./Data";
 
@@ -20,6 +21,31 @@ const ProfileRow = ({ profile }) => (
 );
 
 const AdvocatePage = () => {
+  const itemsPerPage = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate index range for current page
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = advocateData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Go to previous page
+  const goToPrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Go to next page
+  const goToNextPage = () => {
+    if (currentPage < Math.ceil(advocateData.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div>
       <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
@@ -41,22 +67,45 @@ const AdvocatePage = () => {
             </tr>
           </thead>
           <tbody>
-            {advocateData.map((profile) => (
+            {currentItems.map((profile) => (
               <ProfileRow key={profile.userId} profile={profile} />
             ))}
           </tbody>
         </table>
-      </div>
-      <div className="flex justify-center mt-4">
-        <button className="flex bg-blue-500 text-white px-3 py-2 mx-2 my-2 cursor-pointer rounded">
-          Previous
-        </button>
-        <span className="flex bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 mx-2 my-2 cursor-pointer rounded">
-          Page 1
-        </span>
-        <button className="flex bg-blue-500 text-white px-3 py-2 mx-2 my-2 cursor-pointer rounded">
-          Next
-        </button>
+        {/* Pagination */}
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage === 1}
+            className="px-4 py-2 mx-1 rounded bg-gray-200"
+          >
+            Previous
+          </button>
+          {Array.from({
+            length: Math.ceil(advocateData.length / itemsPerPage),
+          }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={`px-4 py-2 mx-1 rounded ${
+                currentPage === index + 1
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+          <button
+            onClick={goToNextPage}
+            disabled={
+              currentPage === Math.ceil(advocateData.length / itemsPerPage)
+            }
+            className="px-4 py-2 mx-1 rounded bg-gray-200"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
