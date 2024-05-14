@@ -23,7 +23,8 @@ const AdvocateDetailsPage = () => {
         src={advocate.photo}
         alt={advocate.name}
       />
-      <p className="text-xl font-bold text-center">{advocate.name}</p>
+      <br />
+      <h1 className="text-2xl font-bold text-center">{advocate.name}</h1>
       <div className="mt-4">
         <p>
           <span className="font-semibold">Father's Name:</span>{" "}
