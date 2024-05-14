@@ -143,15 +143,17 @@ const Navigation = () => {
   }, []);
 
   return (
-    <Menu
-      mode="horizontal"
-      style={{ display: "flex", justifyContent: "center" }}
-      openKeys={openKeys}
-      onOpenChange={(keys) => setOpenKeys(keys)}
-      className={`navbar ${isSticky ? "sticky" : ""}`}
-    >
-      {renderMenuItems(items, setOpenKeys, openKeys)}
-    </Menu>
+    <div>
+      <Menu
+        mode="horizontal"
+        style={{ display: "flex", justifyContent: "center" }}
+        openKeys={openKeys}
+        onOpenChange={(keys) => setOpenKeys(keys)}
+        className={`navbar ${isSticky ? "sticky" : ""}`}
+      >
+        {renderMenuItems(items, setOpenKeys, openKeys)}
+      </Menu>
+    </div>
   );
 };
 
