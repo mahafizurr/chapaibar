@@ -1,9 +1,5 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import "./styles.css";
-import "./App.css";
-
-import Navigation from "./components/Navigation";
 
 import Home from "./pages/Home";
 import Committee from "./pages/Committee";
@@ -41,13 +37,16 @@ import UserProfileDetails from "./components/UserProfileDetails";
 import Login from "./components/Login";
 import Committee2023 from "./committee/Committee2023";
 import AdvocateDetailsPage from "./components/AdvocateDetailsPage";
+import CustomNavbar from "../src/components/Navbar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   const isAuthenticated = true;
   return (
     <div>
-      <Navigation />
-
+      <Header />
+      <CustomNavbar />
       <Routes>
         <Route path="/" element={<Home />} exact />
         <Route path="/committee" element={<Committee />} />
@@ -93,6 +92,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

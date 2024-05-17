@@ -11,9 +11,9 @@ const Committee2024 = () => {
         <table className=" font-bangla text-xl text-center w-full border border-collapse">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border p-2">c‡`i bvg</th>
-              <th className="border p-2">weÁ G¨vW‡fv‡KUM‡Yi bvg</th>
-              <th className="border p-2">‡gvevBj b¤^i</th>
+              <th className="border p-2 font-bangla">c‡`i bvg</th>
+              <th className="border p-2 font-bangla">weÁ G¨vW‡fv‡KUM‡Yi bvg</th>
+              <th className="border p-2 font-bangla">‡gvevBj b¤^i</th>
             </tr>
           </thead>
           <tbody>
