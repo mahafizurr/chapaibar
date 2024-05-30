@@ -2,10 +2,10 @@ import AdvocatePage from "./AdvocatePage";
 
 const MemberDirectories = () => {
   return (
-    <div>
-      <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
+    <div className=" container pt-4">
+      <h3 className="bg-green-700 text-center text-white py-2">
         Members Directory
-      </h1>
+      </h3>
 
       <AdvocatePage />
     </div>

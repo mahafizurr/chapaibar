@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
-                href="/"
+                to="/"
                 smooth={true}
                 duration={500}
                 className="text-white hover:text-gray-300"
@@ -32,7 +32,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="/membersdirectory"
+                to="/membersdirectory"
                 smooth={true}
                 duration={500}
                 className="text-white hover:text-gray-300"
@@ -43,7 +43,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="/employee"
+                to="/employee"
                 smooth={true}
                 duration={500}
                 className="text-white hover:text-gray-300"
@@ -54,7 +54,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="/notice"
+                to="/notice"
                 smooth={true}
                 duration={500}
                 className="text-white hover:text-gray-300"

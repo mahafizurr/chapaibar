@@ -12,7 +12,7 @@ const renderNavItems = (items) => {
           title={item.label}
           id={`${item.key}-dropdown`}
         >
-          {renderNavItems(item.children)}
+          <div className="bg-green-600">{renderNavItems(item.children)}</div>
         </NavDropdown>
       );
     }

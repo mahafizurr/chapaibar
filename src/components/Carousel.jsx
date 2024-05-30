@@ -1,37 +1,40 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
-import "../styles.css";
-
-// import required modules
-import { Navigation } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Navigation, Autoplay } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <div className="container bg-slate-300 py-4">
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+    <div className="container bg-slate-300 py-2">
+      <Swiper
+        navigation={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Navigation, Autoplay]}
+        className="mySwiper"
+      >
         <SwiperSlide>
           <img
             src="first.jpg"
             alt="chapaibar first"
-            className="object-cover w-full md:w-96 lg:w-96 h-48 md:h-auto lg:h-auto"
+            className="object-cover w-full h-48 sm:h-64 md:h-80 lg:h-96"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="second.jpg"
-            alt="chapaibar first"
-            className="object-cover w-full md:w-96 lg:w-96 h-48 md:h-auto lg:h-auto"
+            alt="chapaibar second"
+            className="object-cover w-full h-48 sm:h-64 md:h-80 lg:h-96"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="third.jpg"
-            alt="chapaibar first"
-            className="object-cover w-full md:w-96 lg:w-96 h-48 md:h-auto lg:h-auto"
+            alt="chapaibar third"
+            className="object-cover w-full h-48 sm:h-64 md:h-80 lg:h-96"
           />
         </SwiperSlide>
       </Swiper>
