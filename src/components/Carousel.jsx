@@ -11,7 +11,7 @@ import { Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <div className="py-2 px-10 shadow-sm">
+    <div className="container bg-slate-300 py-4">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
           <img

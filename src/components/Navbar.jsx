@@ -1,13 +1,5 @@
-// Navbar.js
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { items } from "../components/NavData";
 import "../Navbar.css";
 
@@ -34,22 +26,14 @@ const renderNavItems = (items) => {
 
 const CustomNavbar = () => {
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
-      <div className="container d-flex justify-content-between align-items-center">
-        <Form className="d-flex">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
+    <Navbar bg="lime-800" variant="dark" expand="lg" sticky="top">
+      <Container>
+        <Navbar.Brand href="/">CHAPAIBAR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto text-capitalize">{renderNavItems(items)}</Nav>
+          <Nav className="ml-auto text-capitalize">{renderNavItems(items)}</Nav>
         </Navbar.Collapse>
-      </div>
+      </Container>
     </Navbar>
   );
 };
