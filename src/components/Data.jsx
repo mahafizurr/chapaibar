@@ -1099,4 +1099,15 @@ export const advocateData = [
     dateofJoining: "30-08-1998",
     dateofEnrollment: "21-03-1998",
   },
+  {
+    userId: 101,
+    bbcSanadNo: 183,
+    name: "MD. TASEBUR RAHMAN",
+    mobileNumber: "+8801732962132",
+    photo: "/assets/11/Tosibur Rahman  01732962132.jpg",
+    fatherName: "MD. BEKOLL MONDAL",
+    address: "Chorjotprotap, Chapainawabganj Sadar, Chapainawabganj",
+    dateofJoining: "20-08-1998",
+    dateofEnrollment: "21-03-1998",
+  },
 ];
