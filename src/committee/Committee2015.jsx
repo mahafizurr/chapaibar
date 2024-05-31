@@ -2,12 +2,12 @@ import React from "react";
 
 const Committee2015 = () => {
   return (
-    <div>
-      <h1 className="bg-slate-800 text-xl p-4 text-center text-white">
+    <div className=" container pt-4">
+      <h3 className="bg-green-700 text-center text-white py-2">
         Previous Committee 2015
-      </h1>
+      </h3>
 
-      <div className="w-full max-w-screen-lg mx-auto">
+      <div className="w-full max-w-screen-lg mx-auto mb-8 overflow-x-auto">
         <table className=" font-bangla text-xl text-center w-full border border-collapse">
           <thead>
             <tr className="bg-gray-200">

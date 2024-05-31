@@ -113,7 +113,7 @@ const AdvocatePage = () => {
 
   return (
     <div className=" container p-4">
-      <div className="w-full max-w-screen-lg mx-auto mt-8 mb-8">
+      <div className="w-full max-w-screen-lg mx-auto mt-6 mb-6">
         <input
           type="text"
           value={searchTerm}

@@ -103,19 +103,19 @@ const employees = [
 ];
 
 const EmployeeCard = ({ employee }) => (
-  <div className="m-2 shadow-lg p-6 md:p-10 rounded-lg text-center w-full">
+  <div className="m-4 shadow-lg p-6 rounded-lg text-center bg-white transition-transform transform hover:scale-105">
     <img
       src={employee.img}
       alt={`${employee.name} photos`}
-      className="mx-auto w-40 h-40 rounded-full mb-4 object-cover"
+      className="mx-auto w-32 h-32 rounded-full mb-4 object-cover shadow-md"
     />
     <h1 className="text-xl font-semibold text-blue-800">
       <Link to={employee.path}>{employee.name}</Link>
     </h1>
-    <p className="text-gray-600 text-md">
+    <p className="text-gray-600 text-md mt-2">
       <span className="font-bold">Designation: </span> {employee.designation}
     </p>
-    <p className="text-gray-600 text-md">
+    <p className="text-gray-600 text-md mt-1">
       <span className="font-bold">Mobile: </span> {employee.mobile}
     </p>
   </div>
@@ -123,10 +123,16 @@ const EmployeeCard = ({ employee }) => (
 
 const EmployeeList = () => {
   return (
-    <div className="container ">
-      <section className="bg-gray-100 pb-2 pt-2 dark:bg-dark lg:pb-10 lg:pt-10">
+    <div className="container mx-auto py-10">
+      <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4">
-          <div className="grid gap-8 place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800">Our Employee's</h2>
+            <p className="text-gray-600 mt-2">
+              Meet our dedicated employee members
+            </p>
+          </div>
+          <div className="grid gap-8 place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {employees.map((employee) => (
               <EmployeeCard key={employee.name} employee={employee} />
             ))}
