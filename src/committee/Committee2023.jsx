@@ -3,7 +3,10 @@ import React from "react";
 
 const Committee2023 = () => {
   return (
-    <div className=" container pt-4">
+    <div
+      className=" container pt-4"
+      style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
+    >
       <h3 className="bg-green-700 text-center text-white py-2">
         Present Committee 2023
       </h3>
