@@ -103,15 +103,20 @@ const employees = [
 ];
 
 const EmployeeCard = ({ employee }) => (
-  <div className="m-4 shadow-lg p-6 rounded-lg text-center bg-white transition-transform transform hover:scale-105">
-    <img
-      src={employee.img}
-      alt={`${employee.name} photos`}
-      className="mx-auto w-32 h-32 rounded-full mb-4 object-cover shadow-md"
-    />
-    <h1 className="text-xl font-semibold text-blue-800">
+  <div className="border p-4 rounded-lg flex flex-col items-center transition-transform transform hover:scale-105 cursor-pointer">
+    <div className="relative w-32 h-32 mx-auto mb-4">
+      <img
+        src={employee.img}
+        alt={`${employee.name} photos`}
+        className="rounded-full object-cover shadow-md w-full h-full"
+      />
+      <div className="absolute bottom-0 right-0 bg-green-500 text-white p-1 rounded-full text-xs">
+        {employee.designation.split(" ")[0]}
+      </div>
+    </div>
+    <h2 className="text-xl font-semibold text-blue-800">
       <Link to={employee.path}>{employee.name}</Link>
-    </h1>
+    </h2>
     <p className="text-gray-600 text-md mt-2">
       <span className="font-bold">Designation: </span> {employee.designation}
     </p>
@@ -123,22 +128,12 @@ const EmployeeCard = ({ employee }) => (
 
 const EmployeeList = () => {
   return (
-    <div className="container mx-auto py-10">
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">Our Employee's</h2>
-            <p className="text-gray-600 mt-2">
-              Meet our dedicated employee members
-            </p>
-          </div>
-          <div className="grid gap-8 place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {employees.map((employee) => (
-              <EmployeeCard key={employee.name} employee={employee} />
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {employees.map((employee) => (
+          <EmployeeCard key={employee.name} employee={employee} />
+        ))}
+      </div>
     </div>
   );
 };

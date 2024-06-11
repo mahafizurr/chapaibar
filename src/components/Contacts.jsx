@@ -1,59 +1,63 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  AiOutlineEnvironment,
-  AiOutlinePhone,
-  AiOutlineMail,
-} from "react-icons/ai";
+  faPhoneAlt,
+  faMapMarkerAlt,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
-const contactMethods = [
-  {
-    icon: <AiOutlinePhone className="text-orange-500 w-10 h-10" />,
-    title: "Call Us",
-    details: "Phone: +880258893306",
-  },
-  {
-    icon: <AiOutlineMail className="text-orange-500 w-10 h-10" />,
-    title: "Email Us",
-    details: "Email: advbarcnj@gmail.com",
-  },
-  {
-    icon: <AiOutlineEnvironment className="text-orange-500 w-10 h-10" />,
-    title: "Address",
-    details: [
-      "Post Code - 6300, Thana: Chapainawabganj Sadar",
-      "Chapainawabganj Court, Chapainawabganj",
-    ],
-  },
-];
-
-export default function Contacts() {
+const Contact = () => {
   return (
-    <div className="container mx-auto p-6">
-      <h3 className="text-2xl font-bold text-center text-white bg-green-700 py-4 rounded-lg shadow-md mb-6">
-        Contact
-      </h3>
-      <div className="flex flex-wrap justify-center gap-6">
-        {contactMethods.map((method, index) => (
-          <div
-            key={index}
-            className="p-6 bg-white rounded-lg shadow-lg w-full sm:w-1/3 lg:w-1/4 flex flex-col items-center text-center transform transition-transform hover:scale-105"
-          >
-            <div className="mb-4">{method.icon}</div>
-            <h1 className="text-xl font-semibold mb-2 text-gray-800">
-              {method.title}
-            </h1>
-            {typeof method.details === "string" ? (
-              <p className="text-base text-gray-600">{method.details}</p>
-            ) : (
-              method.details.map((line, idx) => (
-                <p key={idx} className="text-base text-gray-600">
-                  {line}
-                </p>
-              ))
-            )}
+    <div className=" container px-4 py-4 md:py-8">
+      <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
+      <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+        <div className="mb-4 flex items-start">
+          <FontAwesomeIcon
+            icon={faMapMarkerAlt}
+            className="text-gray-700 mr-4 text-xl"
+          />
+          <div>
+            <span className="font-semibold block">Address:</span>
+            <p className="text-gray-700">
+              Post Code - 6300, Thana: Chapainawabganj Sadar <br />
+              Chapainawabganj Court, Chapainawabganj
+            </p>
           </div>
-        ))}
+        </div>
+        <div className="mb-4 flex items-start">
+          <FontAwesomeIcon
+            icon={faPhoneAlt}
+            className="text-gray-700 mr-4 text-xl"
+          />
+          <div>
+            <span className="font-semibold block">Phone:</span>
+            <a
+              href="tel:+880258893306"
+              className="text-blue-500 hover:underline"
+            >
+              +880258893306
+            </a>
+          </div>
+        </div>
+
+        <div className="mb-4 flex items-start">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="text-gray-700 mr-4 text-xl"
+          />
+          <div>
+            <span className="font-semibold block">Email:</span>
+            <a
+              href="mailto:advbarcnj@gmail.com"
+              className="text-blue-500 hover:underline"
+            >
+              advbarcnj@gmail.com
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Contact;

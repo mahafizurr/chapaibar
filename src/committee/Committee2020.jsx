@@ -14,70 +14,73 @@ const Committee2020 = () => {
         <table className=" font-bangla text-xl text-center w-full border border-collapse">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border p-2">c‡`i bvg</th>
-              <th className="border p-2">weÁ G¨vW‡fv‡KUM‡Yi bvg</th>
+              <th className="border p-2">পদের নাম</th>
+              <th className="border p-2">বিজ্ঞ এ্যাডভোকেটগণের নাম</th>
             </tr>
           </thead>
           <tbody>
             <tr className="bg-gray-100">
-              <td className="border p-2">mfvcwZ</td>
-              <td className="border p-2">‡gvt †Mvjvg Kwei </td>
+              <td className="border p-2">সভাপতি</td>
+              <td className="border p-2">মোঃ গোলাম কবির</td>
+            </tr>
+            <tr className="bg-gray-200">
+              <td className="border p-2">সহ-সভাপতি</td>
+              <td className="border p-2">মোহাঃ নুরুল ইসলাম (সেন্টু)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">mn-mfvcwZ</td>
-              <td className="border p-2">†gvnvt byiæj Bmjvg (‡m›Uz)</td>
+              <td className="border p-2">সহ-সভাপতি</td>
+              <td className="border p-2">মোহাঃ আহসান আলী</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">mn-mfvcwZ</td>
-              <td className="border p-2">‡gvnvt Avnmvb Avjx </td>
+              <td className="border p-2">সেক্রেটারী জেনারেল</td>
+              <td className="border p-2">মোহাঃ আকরামুল ইসলাম (আকরাম)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">‡m‡µUvix †Rbv‡ij</td>
-              <td className="border p-2">‡gvnvt AvKivgyj Bmjvg (AvKivg)</td>
+              <td className="border p-2">সহ-সেক্রেটারী জেনারেল</td>
+              <td className="border p-2">মোহাঃ ফরহাদ হোসেন (মিলন)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">mn-†m‡µUvix †Rbv‡ij</td>
-              <td className="border p-2">‡gvnvt dinv` †nv‡mb (wgjb)</td>
+              <td className="border p-2">সহ-সেক্রেটারী জেনারেল</td>
+              <td className="border p-2">মোঃ ইলিয়াস বিশ্বাস</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">mn-†m‡µUvix †Rbv‡ij</td>
-              <td className="border p-2">‡gvt Bwjqvm wek¦vm </td>
+              <td className="border p-2">সেক্রেটারী ফর এ্যাকাউন্টস</td>
+              <td className="border p-2">মোহাঃ তসিবুর রহমান</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">‡m‡µUvix di G¨vKvD›Um</td>
-              <td className="border p-2">†gvnvt Zwmeyi ingvb </td>
+              <td className="border p-2">সেক্রেটারী ফর লাইব্রেরী</td>
+              <td className="border p-2">মোঃ মাসির আলী</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">‡m‡µUvix di jvB‡eªix</td>
-              <td className="border p-2">‡gvt gvwmi Avjx </td>
+              <td className="border p-2">
+                সেক্রেটারী ফর কালচার এন্ড ম্যাগাজিন
+              </td>
+              <td className="border p-2">মোঃ আশিক ইকবাল (সুজন)</td>
+            </tr>
+
+            <tr className="bg-gray-100">
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">মুহাম্মদ আব্দুস সামাদ (৩)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">‡m‡µUvix di KvjPvi GÛ g¨vMvwRb</td>
-              <td className="border p-2">‡gvt AvwkK BKevj (myRb)</td>
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">মোঃ ইউনুস মিঞা (ফিটু)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">gynv¤§` Avãym mvgv` (3)</td>
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">মোঃ দেলুয়ার জাহান</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">‡gvt BDbym wgTv (wdUz)</td>
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">মোঃ মাসুদ রানা</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">‡gvt †`jyqvi Rvnvb </td>
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">আলঃ মুহাঃ মনিরুল ইসলাম (বাবু)</td>
             </tr>
             <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">‡gvt gvmy` ivbv </td>
-            </tr>
-            <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">Avjt gynvt gwbiæj Bmjvg (evey)</td>
-            </tr>
-            <tr className="bg-gray-100">
-              <td className="border p-2">m`m¨</td>
-              <td className="border p-2">‡gvt Beªvwng †nv‡mb (eyjeyj)</td>
+              <td className="border p-2">সদস্য</td>
+              <td className="border p-2">মোঃ ইব্রাহিম হোসেন (বুলবুল)</td>
             </tr>
           </tbody>
         </table>
