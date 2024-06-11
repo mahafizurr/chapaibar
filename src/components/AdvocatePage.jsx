@@ -14,7 +14,7 @@ const ProfileRow = ({ profile }) => (
       <img
         src={profile.photo}
         alt={profile.name}
-        className="w-20 h-20 object-cover rounded-full"
+        className="w-20 h-20 object-cover rounded-sm"
       />
     </td>
   </tr>
