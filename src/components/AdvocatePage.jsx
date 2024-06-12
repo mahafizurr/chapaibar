@@ -4,17 +4,17 @@ import { advocateData } from "./Data";
 
 const ProfileRow = ({ profile }) => (
   <tr className="bg-gray-100 hover:bg-gray-200">
-    <td className="border p-2">{profile.userId}</td>
-    <td className="border p-2">{profile.bbcSanadNo}</td>
-    <td className="border p-2 text-blue-800">
+    <td className="border p-2 text-xs sm:text-sm">{profile.userId}</td>
+    <td className="border p-2 text-xs sm:text-sm">{profile.bbcSanadNo}</td>
+    <td className="border p-2 text-xs sm:text-sm text-blue-800">
       <Link to={`/advocates/${profile.userId}`}>{profile.name}</Link>
     </td>
-    <td className="border p-2">{profile.mobileNumber}</td>
+    <td className="border p-2 text-xs sm:text-sm">{profile.mobileNumber}</td>
     <td className="border p-2">
       <img
         src={profile.photo}
         alt={profile.name}
-        className="w-20 h-20 object-cover rounded-sm"
+        className="w-12 h-12 sm:w-20 sm:h-20 object-cover rounded-sm"
       />
     </td>
   </tr>
@@ -94,7 +94,7 @@ const AdvocatePage = () => {
         <button
           key={index}
           onClick={() => paginate(number)}
-          className={`px-2 py-1 rounded-md ${
+          className={`px-2 py-1 rounded-md text-xs sm:text-sm ${
             currentPage === number
               ? "bg-blue-500 text-white"
               : "bg-white border hover:bg-gray-200"
@@ -112,13 +112,13 @@ const AdvocatePage = () => {
   }, [searchTerm]);
 
   return (
-    <div className=" container p-4">
+    <div className="container p-4">
       <div className="w-full max-w-screen-lg mx-auto mt-6 mb-6">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border p-2 rounded w-full"
+          className="border p-2 rounded w-full text-xs sm:text-sm"
           placeholder="Search with advocate name"
         />
       </div>
@@ -126,11 +126,11 @@ const AdvocatePage = () => {
         <table className="text-center w-full border border-collapse">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border p-2">Serial No:</th>
-              <th className="border p-2">BBC Sanad No:</th>
-              <th className="border p-2">Name:</th>
-              <th className="border p-2">Mobile Number:</th>
-              <th className="border p-2">Photo:</th>
+              <th className="border p-2 text-xs sm:text-sm">Serial No:</th>
+              <th className="border p-2 text-xs sm:text-sm">BBC Sanad No:</th>
+              <th className="border p-2 text-xs sm:text-sm">Name:</th>
+              <th className="border p-2 text-xs sm:text-sm">Mobile Number:</th>
+              <th className="border p-2 text-xs sm:text-sm">Photo:</th>
             </tr>
           </thead>
           <tbody>
@@ -144,7 +144,7 @@ const AdvocatePage = () => {
         <button
           onClick={goToPrevPage}
           disabled={currentPage === 1}
-          className={`px-2 py-1 rounded-l-md mb-2 ${
+          className={`px-2 py-1 text-xs sm:text-sm rounded-l-md mb-2 ${
             currentPage === 1
               ? "bg-gray-300 cursor-not-allowed"
               : "bg-blue-500 text-white hover:bg-blue-700"
@@ -158,7 +158,7 @@ const AdvocatePage = () => {
         <button
           onClick={goToNextPage}
           disabled={currentPage === pageNumbers.length}
-          className={`px-2 py-1 rounded-r-md mb-2 ${
+          className={`px-2 py-1 text-xs sm:text-sm rounded-r-md mb-2 ${
             currentPage === pageNumbers.length
               ? "bg-gray-300 cursor-not-allowed"
               : "bg-blue-500 text-white hover:bg-blue-700"
