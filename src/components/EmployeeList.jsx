@@ -12,7 +12,7 @@ const employees = [
   {
     name: "MD. ABDUL MOMIN",
     designation: "Office Assistant",
-    mobile: "01808050117",
+    mobile: "01727250117",
     img: "/stafs/02. Abdul Momin.jpg",
     path: "/momin",
   },
@@ -51,13 +51,7 @@ const employees = [
     img: "/stafs/07. Badol Ali.jpg",
     path: "/badol",
   },
-  {
-    name: "MD. NURUL ISLAM SAHIN",
-    designation: "Mlss",
-    mobile: "01740586550",
-    img: "/stafs/08. Shahin Ali.jpg",
-    path: "/nurul",
-  },
+
   {
     name: "MD. SAGOR",
     designation: "Mlss",
@@ -73,11 +67,11 @@ const employees = [
     path: "/sabbir",
   },
   {
-    name: "MD. TOYMUR RAHMAN",
+    name: "MD. NURUL ISLAM SAHIN",
     designation: "Night Guard",
-    mobile: "01745564416",
-    img: "/stafs/11. Toymur Rahman.jpg",
-    path: "/toymur",
+    mobile: "01740586550",
+    img: "/stafs/08. Shahin Ali.jpg",
+    path: "/nurul",
   },
   {
     name: "SREE POLASH JAMADER",
